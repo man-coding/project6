@@ -1,16 +1,20 @@
-package object;
+package object.quiz;
 
-public class Ex01 {
+public class Quiz01 {
 
 	public static void main(String[] args) {
 
-		Student student = new Student("둘리", 10000);
-		Bus bus = new Bus(100);
-		student.takeBus(bus);
-		student.takeBus(bus);// 상황종료
-
-		student.showInfo();
+		Student student1 = new Student("둘리", 5000); // 버스 객체 생성
+		Bus bus = new Bus(100); // 버스 객체 생성
+		student1.takeBus(bus); // 행위 작성
+		student1.showInfo();
 		bus.showInfo();
+
+		Student student2 = new Student("도우너", 10000);
+		Subway subway = new Subway("2호선");
+		student2.takeSubway(subway);
+		student2.showInfo();
+		subway.showInfo();
 	}
 
 }
@@ -24,7 +28,7 @@ class Bus {
 		this.busNumber = busNumbr;
 	}
 
-	public void take(int money) { // 버스요금
+	public void take(int money) { // 수입, 승객수 증가 메소드
 
 		this.money = this.money + money; // 버스 수입 증가
 		passengerCount++; // 승객수 1명 증가
@@ -48,7 +52,7 @@ class Subway {
 		this.lineNumber = lineNumber;
 	}
 
-	public void take(int money) { // 버스요금
+	public void take(int money) { // 수입,승객수 증가 메소드
 
 		this.money = this.money + money; // 버스 수입 증가
 		passengerCount++; // 승객수 1명 증가
